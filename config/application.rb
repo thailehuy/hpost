@@ -61,13 +61,13 @@ module Hpost
     config.middleware.use Rack::Cors do
       allow do
         origins 'http://localhost:3000'
-        resource %r{/posts*.json},
+        resource /\/posts.*\.json/,
           :headers => ['Origin', 'Accept', 'Content-Type'],
           :methods => [:get]
       end
       allow do
         origins 'http://hblogview.herokuapp.com'
-        resource %r{/posts*.json},
+        resource /\/posts.*\.json/,
           :headers => ['Origin', 'Accept', 'Content-Type'],
           :methods => [:get]
       end
