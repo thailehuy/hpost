@@ -10,6 +10,7 @@ gem 'mysql2'
 gem 'haml'
 gem 'therubyracer'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'will_paginate'
 
 group :production do
   gem 'pg'
