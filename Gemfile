@@ -10,6 +10,10 @@ gem 'mysql2'
 gem 'haml'
 gem 'therubyracer'
 
+group :production do
+  gem 'pg'
+end
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
