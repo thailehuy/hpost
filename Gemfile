@@ -9,6 +9,7 @@ gem 'mysql2'
 
 gem 'haml'
 gem 'therubyracer'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :production do
   gem 'pg'
