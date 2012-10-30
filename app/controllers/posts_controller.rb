@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
-  skip_before_filter :authenticate, :only => [:index, :show]
+  skip_before_filter :authenticate, :only => [:index, :show, :info]
+  def info
+    render :json => {:post_count => Post.count}
+  end
+
   # GET /posts
   # GET /posts.json
   def index
