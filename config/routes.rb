@@ -1,6 +1,6 @@
 Hpost::Application.routes.draw do
   resources :posts do
-    member do
+    collection do
       get :info
     end
   end
