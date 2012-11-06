@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
   skip_before_filter :authenticate, :only => [:index, :show, :info]
   def info
-    render :json => {:post_count => Post.count}
+    param[:perPage] ||= 1
+    post_count = Post.count
+    render :json => {
+      :post_count => post_count,
+      :max_page => (post_count.to_f / params[:perPage]).ceil
+    }
   end
 
   # GET /posts
